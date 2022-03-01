@@ -23,6 +23,19 @@ public class PacMan{
 	}
 
 	public boolean is_ghost_in_range() { 
+		if (myMap.getLoc(myLoc.shift(0, 1)) == Map.Type.GHOST) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(1, 1)) == Map.Type.GHOST) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(-1, 0)) == Map.Type.GHOST) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(-1, -1)) == Map.Type.GHOST) {
+			return true;
+		}
+
 		return false;
 	}
 
