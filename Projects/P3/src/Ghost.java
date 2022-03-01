@@ -17,7 +17,12 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return myMap.move(myName, myLoc, Map.Type.GHOST);
+		ArrayList<Location> valid_moves = get_valid_moves();
+		if (valid_moves.size() > 0) {
+			return myMap.move(myName, valid_moves.get(0), Map.Type.GHOST); 
+		}
+
+		return false;
 	}
 
 	public boolean is_pacman_in_range() { 
