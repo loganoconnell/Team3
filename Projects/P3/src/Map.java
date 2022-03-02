@@ -58,9 +58,13 @@ public class Map{
 		return false;
 	}
 	
-	public HashSet<Type> getLoc(Location loc) {
+	public HashSet<Type> getLoc(Location loc) throws Exception {
 		//wallSet and emptySet will help you write this method
-		return field.get(loc);
+		if (field.containsKey(loc)) {
+			return field.get(loc);
+		} else {
+			throw new Exception("Not a valid location");
+		}
 	}
 
 	public boolean attack(String Name) {
