@@ -16,16 +16,16 @@ public class PacMan{
 
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validLocs = new ArrayList<Location>();
-		if (myMap.move(myName, new Location(myLoc.x - 1, myLoc.y), PACMAN)) {
+		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) == myMap.Type.EMPTY) {
 			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
 		} 
-		if (myMap.move(myName, new Location(myLoc.x + 1, myLoc.y), PACMAN)) {
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) == myMap.Type.EMPTY) {
 			validLocs.add(new Location(myLoc.x + 1, myLoc.y));
 		} 
-		if (myMap.move(myName, new Location(myLoc.x, myLoc.y - 1), PACMAN)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) == myMap.Type.EMPTY) {
 			validLocs.add(new Location(myLoc.x, myLoc.y - 1));
 		} 
-		if (myMap.move(myName, new Location(myLoc.x, myLoc.y + 1), PACMAN)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) == myMap.Type.EMPTY) {
 			validLocs.add(new Location(myLoc.x, myLoc.y + 1));
 		}
 
