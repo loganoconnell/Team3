@@ -59,7 +59,7 @@ public class Map{
 
 		JComponent temp = components.get(name);
 		temp.setLocation(loc.x, loc.y);
-		components.replace(name, loc);
+		components.replace(name, temp);
 
 		field.get(loc).add(type);
 
