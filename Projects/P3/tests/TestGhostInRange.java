@@ -8,9 +8,11 @@ public class TestGhostInRange extends TestCase {
 		MainFrame mf = new MainFrame();
 
 		mf.addPacMan(new Location(1, 1));
-		Ghost gh = mf.addGhost(new Location(1, 2), "inky", Color.CYAN);
+		Ghost inky = mf.addGhost(new Location(1, 2), "inky", Color.CYAN);
+		Ghost blinky = mf.addGhost(new Location(1, 3), "blinky", Color.RED);
 
-		assertTrue(gh.is_pacman_in_range());
+		assertTrue(inky.is_pacman_in_range());
+		assertFalse(blinky.is_pacman_in_range());
 	}
 }
 
