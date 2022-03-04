@@ -18,12 +18,18 @@ Sreyas: get_valid_moves(Generates the valid locations to where the PacMan can mo
 
 Selena: is_ghost_in_range(Checks the map if there are ghosts at any location one away from pacman)
 
+Darren: move(Moves pacman one step from its current location.)
+
 ### Ghost:
 Sreyas: get_valid_moves(Generates the valid locations to where the Ghost can move from its current location, storing them in an ArrayList.)
 
 Selena: move(Moves the ghost to the first valid move, returns false if no possible valid moves)
 
+Darren: is_pacman_in_range(Checks if pacman is at a location one away from the ghost)
+
 ### Map:
 Sreyas: getLoc(Obtains the icon presently located in the given location.)
 
 Selena: move(Updates locations, components, field with new location of a component)
+
+Darren: eatCookie(Updates locations, components, and field when pacman eats a cookie)
