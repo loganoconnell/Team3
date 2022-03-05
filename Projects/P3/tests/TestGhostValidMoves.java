@@ -10,9 +10,9 @@ public class TestGhostValidMoves extends TestCase {
 
 		Ghost ghost = frame.addGhost(new Location(3, 3), "red", Color.red);
 
-		assertTrue(ghost.get_valid_locs().size() == 3);
-		assertTrue(ghost.get_valid_locs().contains(new Location(2, 3)));
-		assertTrue(ghost.get_valid_locs().contains(new Location(4, 3)));
-		assertTrue(ghost.get_valid_locs().contains(new Location(3, 4)));
+		assertTrue(ghost.get_valid_moves().size() == 3);
+		assertTrue(ghost.get_valid_moves().contains(new Location(2, 3)));
+		assertTrue(ghost.get_valid_moves().contains(new Location(4, 3)));
+		assertTrue(ghost.get_valid_moves().contains(new Location(3, 4)));
 	}
 }
