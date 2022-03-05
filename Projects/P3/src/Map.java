@@ -66,6 +66,8 @@ public class Map{
 
 		return null;
 
+	}
+
 	public boolean attack(String Name) {
 		//update gameOver
 		return false;
