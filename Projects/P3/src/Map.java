@@ -62,9 +62,9 @@ public class Map{
 		//wallSet and emptySet will help you write this method
 		if (field.containsKey(loc)) {
 			return field.get(loc);
-		} else {
-			throw new Exception("Not a valid location");
 		}
+
+		throw new Exception("Not a valid location");
 	}
 
 	public boolean attack(String Name) {
