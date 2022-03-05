@@ -37,4 +37,4 @@ Selena: move(Updates locations, components, field with new location of a compone
 
 Darren: eatCookie(Updates locations, components, and field when pacman eats a cookie)
 
-Ishaan: attack()
+Ishaan: attack(It controls ghost attacking pacman. Successful attacks return true while others return false. )
