@@ -15,14 +15,45 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;	
+		ArrayList<Location> validLocs = new ArrayList<Location>();
+		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
+		} 
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+			validLocs.add(new Location(myLoc.x + 1, myLoc.y));
+		} 
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.EMPTY)) {
+			validLocs.add(new Location(myLoc.x, myLoc.y - 1));
+		} 
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.EMPTY)) {
+			validLocs.add(new Location(myLoc.x, myLoc.y + 1));
+		}
+
+		return validLocs;
 	}
 
 	public boolean move() {
+		ArrayList<Location> validMoves = get_valid_moves();
+		if(!validMoves.isEmpty()) {
+			return myMap.move(myName, validMoves.get(0), Map.Type.PACMAN);
+		}
 		return false;
 	}
 
 	public boolean is_ghost_in_range() { 
+		if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(1, 1)).contains(Map.Type.GHOST)) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
+			return true;
+		}
+		else if (myMap.getLoc(myLoc.shift(-1, -1)).contains(Map.Type.GHOST)) {
+			return true;
+		}
+
 		return false;
 	}
 

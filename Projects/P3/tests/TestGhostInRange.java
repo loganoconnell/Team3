@@ -5,14 +5,17 @@ import java.io.*;
 public class TestGhostInRange extends TestCase {
 
 	public void testGhostInRange() throws FileNotFoundException{
-		MainFrame mf = new MainFrame();
+		MainFrame frame = new MainFrame();
 
-		mf.addPacMan(new Location(1, 1));
-		Ghost inky = mf.addGhost(new Location(1, 2), "inky", Color.CYAN);
-		Ghost blinky = mf.addGhost(new Location(1, 3), "blinky", Color.RED);
+		int x = 5;
+		int y = 5;
 
-		assertTrue(inky.is_pacman_in_range());
-		assertFalse(blinky.is_pacman_in_range());
+		Ghost ghost = frame.addGhost(new Location(x, y), "ghost", Color.red);
+		PacMan pacman1 = frame.addPacMan(new Location(x+1, y));
+		PacMan pacman2 = frame.addPacMan(new Location(x-2, y));
+	
+		assertTrue(pacman1.is_ghost_in_range());
+		assertFalse(pacman2.is_ghost_in_range());
 	}
 }
 
