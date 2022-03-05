@@ -60,7 +60,7 @@ public class Map{
 	
 	public HashSet<Type> getLoc(Location loc) throws Exception {
 		//wallSet and emptySet will help you write this method
-		if (field.containsKey(loc)) {
+		if (field.containsKey(loc) != null AND field.containsKey(loc)) {
 			return field.get(loc);
 		}
 
