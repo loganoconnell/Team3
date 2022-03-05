@@ -66,13 +66,14 @@ public class Map{
 		return true;
 	}
 	
-	public HashSet<Type> getLoc(Location loc) throws Exception {
+	public HashSet<Type> getLoc(Location loc){
 		//wallSet and emptySet will help you write this method
 		if (field.containsKey(loc)) {
 			return field.get(loc);
-		} else {
-			throw new Exception("Not a valid location");
 		}
+
+		return null;
+
 	}
 
 	public boolean attack(String Name) {
