@@ -88,7 +88,6 @@ public class Map{
 		if(getLoc(loc).contains(Map.Type.COOKIE)) {
 			String cookieID = "tok_x" + loc.x + "_y" + loc.y;
 			locations.remove(cookieID);
-			getLoc(loc).remove(Map.Type.COOKIE);
 			cookies--;
 			return components.remove(cookieID);
 		}
