@@ -32,7 +32,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore tests/TestPacManValidMoves
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestPacManValidMoves
 
   ghostgetvalidmoves:
     # The type of runner that the job will run on
@@ -45,7 +45,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore tests/TestGhostValidMoves
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestGhostValidMoves
 
   ghostgetvalidmoves:
     # The type of runner that the job will run on
@@ -58,4 +58,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore tests/TestMapGetLoc
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestMapGetLoc
