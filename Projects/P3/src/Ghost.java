@@ -31,9 +31,9 @@ public class Ghost{
 
 	public boolean move() {
 		ArrayList<Location> valid_moves = get_valid_moves();
-		if (valid_moves.size() > 0) {
-			return myMap.move(myName, valid_moves.get(0), Map.Type.GHOST); 
-		}
+		// if (valid_moves.size() > 0) {
+		// 	return myMap.move(myName, valid_moves.get(0), Map.Type.GHOST); 
+		// }
 
 		return false;
 	}
