@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.io.*;
 
 
-public class TestMapGetLoc {
+public class TestMapGetLoc extends TestCase{
 	
 	public void testMapGetLoc() {
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
