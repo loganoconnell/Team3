@@ -5,6 +5,17 @@ import java.io.*;
 public class TestMapEatCookie {
 	
 	public void testMapEatCookie() {
-		return null;
+		NoFrame nf = new NoFrame();
+
+		Map m = nf.getMap();
+
+		Location loc = new Location(1, 1);
+
+		assertTrue(m.getLoc(loc).contains(Map.Type.COOKIE));
+
+		PacMan pc = nf.addPacMan(loc);
+		m.eatCookie(pc.myName);
+
+		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));
 	}
 }
