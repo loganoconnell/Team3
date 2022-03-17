@@ -5,6 +5,14 @@ import java.io.*;
 public class TestPacManInRange extends TestCase {
 
 	public void testPacManInRange() throws FileNotFoundException{
-		return null;
+		NoFrame nf = new NoFrame();
+
+		Ghost blinky = nf.addGhost(new Location(1, 2), "Blinky", Color.red);
+		Ghost clyde = nf.addGhost(new Location(1, 3), "Clyde", Color.orange);
+
+		PacMan pacman = nf.addPacMan(new Location(1, 1));
+	
+		assertTrue(blinky.is_pacman_in_range());
+		assertFalse(clyde.is_pacman_in_range());
 	}
 }

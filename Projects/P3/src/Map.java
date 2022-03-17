@@ -80,6 +80,16 @@ public class Map{
 
 	public boolean attack(String Name) {
 		//update gameOver
+		Location loc = locations.get(Name);
+		if(loc == null) {
+			return false;
+		}
+		
+		if(field.get(loc.shift(-1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, -1)).contains(Type.PACMAN) ||
+		   field.get(loc.shift(1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, 1)).contains(Type.PACMAN)) {
+			gameOver = false;
+			return true;
+		}
 		return false;
 	}
 	
