@@ -32,8 +32,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/PacMan.java tests/TestPacManValidMoves.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestPacManValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestPacManValidMoves
 
   ghostgetvalidmoves:
     # The type of runner that the job will run on
@@ -45,8 +45,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/Ghost.java tests/TestGhostValidMoves.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestGhostValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestGhostValidMoves
 
   mapgetloc:
     # The type of runner that the job will run on
@@ -58,5 +58,5 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/Map.java tests/TestMapGetLoc.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestMapGetLoc
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestMapGetLoc
