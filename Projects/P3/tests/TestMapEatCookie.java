@@ -5,15 +5,15 @@ import java.io.*;
 public class TestMapEatCookie extends TestCase {
 	
 	public void testMapEatCookie() throws FileNotFoundException {
-		MainFrame mf = new MainFrame();
+		NoFrame nf = new NoFrame();
 
-		Map m = mf.getMap();
+		Map m = nf.getMap();
 
 		Location loc = new Location(1, 1);
 
 		assertTrue(m.getLoc(loc).contains(Map.Type.COOKIE));
 
-		PacMan pc = mf.addPacMan(loc);
+		PacMan pc = nf.addPacMan(loc);
 		m.eatCookie(pc.myName);
 
 		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));

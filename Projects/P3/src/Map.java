@@ -63,11 +63,13 @@ public class Map{
 
 		field.get(loc).add(type);
 
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc){
 		//wallSet and emptySet will help you write this method
+		return null;
+
 		if (field.containsKey(loc)) {
 			return field.get(loc);
 		}
@@ -98,7 +100,6 @@ public class Map{
 		if(getLoc(loc).contains(Map.Type.COOKIE)) {
 			String cookieID = "tok_x" + loc.x + "_y" + loc.y;
 			locations.remove(cookieID);
-			getLoc(loc).remove(Map.Type.COOKIE);
 			cookies--;
 			return components.remove(cookieID);
 		}

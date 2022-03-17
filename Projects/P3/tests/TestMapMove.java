@@ -5,7 +5,7 @@ import java.io.*;
 public class TestMapMove extends TestCase {
 
 	public void testMapMove() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 
 		int x = 5;
 		int y = 5;
