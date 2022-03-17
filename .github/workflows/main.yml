@@ -34,7 +34,7 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestPacManValidMoves
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManValidMoves
 
   ghostgetvalidmoves:
     # The type of runner that the job will run on
@@ -48,7 +48,7 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestGhostValidMoves
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostValidMoves
 
   mapgetloc:
     # The type of runner that the job will run on
@@ -62,4 +62,4 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore tests/TestMapGetLoc
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
