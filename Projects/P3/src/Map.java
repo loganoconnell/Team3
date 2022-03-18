@@ -72,7 +72,7 @@ public class Map{
 			return field.get(loc);
 		}
 
-		return wallSet;
+		return new HashSet<PACMAN>;
 
 	}
 
