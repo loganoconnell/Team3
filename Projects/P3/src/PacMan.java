@@ -16,6 +16,9 @@ public class PacMan{
 
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validLocs = new ArrayList<Location>();
+
+		validLocs.add(new Location(myLoc.x, myLoc.y + 100));
+
 		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY)) {
 			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
 		} 
@@ -33,7 +36,8 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location> validMoves = get_valid_moves();
+		ArrayList<Location> validMoves = new ArrayList<Location>();
+		validMoves.add(new Location(myLoc.x + 5, myLoc.y));
 		if(!validMoves.isEmpty()) {
 			return myMap.move(myName, validMoves.get(0), Map.Type.PACMAN);
 		}
@@ -42,22 +46,25 @@ public class PacMan{
 
 	public boolean is_ghost_in_range() { 
 		if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) {
-			return true;
+			return false;
 		}
 		else if (myMap.getLoc(myLoc.shift(1, 1)).contains(Map.Type.GHOST)) {
-			return true;
+			return false;
 		}
 		else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
-			return true;
+			return false;
 		}
 		else if (myMap.getLoc(myLoc.shift(-1, -1)).contains(Map.Type.GHOST)) {
-			return true;
+			return false;
 		}
 
 		return false;
 	}
 
-	public JComponent consume() { 
- 		return null;
+	public JComponent consume() {
+		if (!myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
+			return myMap.eatCookie(myName);
+		}
+		return null;
 	}
 }
