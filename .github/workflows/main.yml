@@ -100,7 +100,7 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestAttack.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestAttack
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true TestAttack
   test_consume:
     runs-on: ubuntu-latest
     container: openjdk
@@ -110,7 +110,7 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestConsume
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true TestConsume
   test_map_attack:
     runs-on: ubuntu-latest
     container: openjdk
@@ -120,7 +120,7 @@ jobs:
         working-directory: ./Projects/P3
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapAttack.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestMapAttack
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true TestMapAttack
   test_pacman_in_range:
     runs-on: ubuntu-latest
     container: openjdk
