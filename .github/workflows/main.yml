@@ -91,3 +91,33 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
           java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
+test_attack:
+  runs-on: ubuntu-latest
+  container: openjdk
+  steps:
+    - uses: actions/checkout@v2
+    - name: Run test
+      working-directory: ./Projects/P3
+      run: |
+        javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestAttack.java
+        java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestAttack
+  test_consume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test
+        working-directory: ./Projects/P3
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestConsume
+  test_map_attack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test
+        working-directory: ./Projects/P3
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapAttack.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore -Djava.awt.headless=true tests/TestMapAttack
