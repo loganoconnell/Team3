@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.io.*;
 
 
-public class TestMapGetLoc {
+public class TestMapGetLoc extends TestCase {
 	
-	public void testMapGetLoc() {
+	public void testMapGetLoc() throws FileNotFoundException {
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		assertTrue(frame.getMap().getLoc(3,3) == Map.Type.EMPTY);
