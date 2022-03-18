@@ -88,9 +88,9 @@ public class Map{
 		if(field.get(loc.shift(-1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, -1)).contains(Type.PACMAN) ||
 		   field.get(loc.shift(1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, 1)).contains(Type.PACMAN)) {
 			gameOver = false;
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	public JComponent eatCookie(String name) {
